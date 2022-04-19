@@ -1,4 +1,4 @@
-use crate::versions::ReleaseVersion::*;
+use self::ReleaseVersion::*;
 
 pub enum ReleaseVersion {
     V1_8,
