@@ -9,15 +9,15 @@ mod status;
 // Structs
 
 trait Packet {
-    fn write(_: Bytes);
+    fn write(&self, _: Bytes);
 
-    fn serverbound() -> bool;
+    fn serverbound(&self) -> bool;
 
-    fn clientbound() -> bool;
+    fn clientbound(&self) -> bool;
 }
 
 impl dyn Packet {
-    fn serverbound() -> bool {
-        !from_server()
+    fn serverbound(&self) -> bool {
+        !self.clientbound()
     }
 }
